@@ -21,5 +21,5 @@ krewes = {
               ]
          }
 period = randint(4, 5)
-studentCount = krewes[period][randint(0, len(krewes[period]) - 1)]
-print(studentCount)
+student = krewes[period][randint(0, len(krewes[period]) - 1)]
+print(student)
