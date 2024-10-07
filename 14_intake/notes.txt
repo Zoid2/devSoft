@@ -1,0 +1,29 @@
+< your heading here >
+
+DISCO:
+* Statement is printed from testmod0.py even though the file is never run. The importation of the file is enough to run the file. 
+* Printing the request arguments returns an empty "ImmutableMulitDict."
+* We find the purple screen of death when trying to print the username through the requests. 
+* Printing headers prints information about the given request. 
+-----------------------------------------------------------------------
+
+
+Q/C/C:
+* 
+* 
+* 
+-----------------------------------------------------------------------
+
+
+OTHER?
+* Anything printed in authenticate only runs upon entering a username. 
+* Printing the username in authenticate is successful upon entering a username. 
+* Upon printing the arguments of the request in authenticate, the ImmutableMultiDict also has a tuple of (sub1, submit Query) as well as the tuple (username, *given username). 
+-----------------------------------------------------------------------
+
+
+
+
+
+
+
