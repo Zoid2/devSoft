@@ -1,0 +1,41 @@
+html {
+    font-family: "Open Sans", sans-serif;
+    background-color: darkgrey;
+}
+
+#Head {
+    color: white;
+    background-color: lightgrey;
+    text-align: center;
+    padding: 5px;
+    font-size: 40px;
+}
+
+#main {
+    background-color: grey;
+    display: flex;
+}
+
+#left {
+    width: 200px;
+    font-size: 20px;
+}
+
+#left p {
+    margin: 0;
+}
+
+ul {
+    color: white;
+    text-align: left;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+}
+
+#bottomCopyright {
+    color: grey;
+    background-color: rgb(70, 70, 70);
+    text-align: right;
+    padding: 10px;
+}
