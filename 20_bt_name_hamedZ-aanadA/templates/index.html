@@ -9,15 +9,16 @@
     <h1>Trying out Bootstrap!</h1>
     <button type="button" class="btn btn-light">Click Me!</button>
     <div class="coloumn container">
-      {% for i in range({{num_cols}}) %}
-        <div class="row">
-        {% for j in range({{num_rows}}) %}
-          <div class="col">
+      {% for i in range(num_cols) %}
+        {{ <div class="row"> }}
+        {% for j in range(num_rows) %}
+          {{ <div class="col"> }}
             Column {{ i }} in Row {{ j }}
-          </div>
+          {{ </div> }}
         {% endfor %}
-        </div>
+        {{ </div> }}
       {% endfor %}
     </div>
   </body>
 </html>
+
