@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 
+JK - Jayden Zhang, Kevin Lin
+SoftDev
+K20 - Foundation Demo - Demoing Foundation CSS on an HTML Page!
+2024-11-15
+time spent: 2 hrs
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Foundation Demo </title>
+    <!-- Link To CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Intro -->
+    <h1 class="text-center" style="margin-top: 10px">Foundations of Ducky</h1>
+    <p class="text-center" style="padding: 1em"> "Welcome to ducky land.""</p>
+
+    <h3 class="text-center">Callouts</h3>
+    <div class="callout primary">
+        <h3>Calling out all duckies</h3>
+        <p>One day John the ducky realized that his brother Sparkles was missing!!!!! Have you heard anything?</p>
+    </div>
+
+    <!-- Grid Container -->
+    <h3 class="text-center">Grid Container</h1>
+    <div class="grid-container"> 
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-4" style="background-color: rgb(50, 251, 222);">Small Duckie</div>
+            <div class="cell medium-4" style="background-color: rgb(50, 241, 228)">Medium Duckie</div>
+            <div class="cell auto" style="background-color: rgb(50, 246, 237)">Large Duckie</div>
+        </div>
+
+    <!-- Vertical Grid Container -->
+    <h3 style="margin-top: 3%;" class="text-center">Vertical Container</h1>
+    <div class="grid-y" style="height: 200px;"> <!-- Grid-Y instead of Grid-X -->
+        <div class="cell small-1 medium-1 large-3">
+            <p>As duckies become wiser they become bigger</p>
+        </div>
+        <div style="background-color: cyan;" class="cell small-4 medium-4 large-2">
+            <p>I'm a small duck so I don't got much to say. Go away</p>
+        </div>
+        <div style="background-color: rgb(50, 245, 190);" class="cell small-6 medium-8 large-5">
+            <p>I'm an average duck, go ask big duck >:(</p>
+        </div>
+        <div style="background-color: rgb(50, 253, 208)" class="cell small-8 medium-12 large-10">
+            <p>I'm a big duck, I'm too important for you. You're beneath me. Mwahahahahahahahahahahhaha</p>
+        </div>
+    </div>
+
+    <div class="grid">
+
+    </div>
+
+    <div>
+        <h3>Ducky Dating Site</h3>
+        <div class="grid-x grid-margin-x small-up-1 medium-up-3">
+            <div class="cell"> <!-- Can have a Title, Image, and a Description -->
+                <div class="card" style="background-color: rgb(252, 222, 222);">
+                    <div class="card-divider">John</div>
+                    <div class="card-section">
+                        <p>Gym bro, 6'5, likes taking walks on the beach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="card" style="background-color: rgb(224, 245, 216);">
+                    <div class="card-divider">Sparkles</div>
+                    <div class="card-section">
+                        <p>W rizz, very sparkly, currently missing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="card" style="background-color: rgb(225, 232, 254);">
+                    <div class="card-divider">Topher</div>
+                    <div class="card-section">
+                        <p>Need I say more?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
