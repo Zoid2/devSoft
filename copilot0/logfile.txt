@@ -1,0 +1,1 @@
+Create a collaborative storytelling website, where users can create and contribute to stories. Each user is only able to contribute to a single story once. Use HTML, CSS, Flask, and SQLite3 to accomplish this

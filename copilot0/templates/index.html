@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Storytelling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Collaborative Storytelling</h1>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('create_story') }}">Create Story</a>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </nav>
+    <div class="stories">
+        {% for story in stories %}
+            <div class="story">
+                <h2>{{ story[1] }}</h2>
+                <p>{{ story[2] }}</p>
+                <a href="{{ url_for('contribute', story_id=story[0]) }}">Contribute to this story</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

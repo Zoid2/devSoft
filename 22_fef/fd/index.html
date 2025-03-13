@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 
+JK - Jayden Zhang, Kevin Lin
+SoftDev
+K20 - Foundation Demo - Demoing Foundation CSS on an HTML Page!
+2024-11-15
+time spent: 2 hrs
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Foundation Demo </title>
+    <!-- Link To CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Intro -->
+    <h1 class="text-center" style="margin-top: 10px">Basics on Foundation</h1>
+    <p class="text-center" style="padding: 1em"> "Foundation is a free responsive front-end framework, providing a responsive grid and HTML and CSS UI components, templates, and code snippets, including typography, forms, buttons, navigation and other interface elements, as well as optional functionality provided by JavaScript extensions." - Wikipedia </p>
+
+    <!-- Grid Container -->
+    <h3 class="text-center">Grid Container</h1>
+    <div class="grid-container"> 
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-4" style="background-color: rgb(166, 251, 222);">Small Cell</div>
+            <div class="cell medium-4" style="background-color: rgb(202, 241, 228)">Medium Cell</div>
+            <div class="cell auto" style="background-color: rgb(218, 246, 237)">Large Cell</div>
+        </div>
+
+    <!-- Vertical Grid Container -->
+    <h3 style="margin-top: 3%;" class="text-center">Vertical Container</h1>
+    <div class="grid-y" style="height: 200px;"> <!-- Grid-Y instead of Grid-X -->
+        <div class="cell small-1 medium-1 large-3">
+            <p>Cell Size refers size on different devices. Larger pairs with desktops, medium with tablets, and small with phones. All of which have different background colors for your convience.</p>
+        </div>
+        <div style="background-color: lightgreen;" class="cell small-4 medium-4 large-2">
+            <p>Cell Size: Small 4 / Medium 4 / Large 2</p>
+        </div>
+        <div style="background-color: rgb(190, 245, 190);" class="cell small-6 medium-8 large-5">
+            <p>Cell Size: Small 6 / Medium 8 / Large 5</p>
+        </div>
+        <div style="background-color: rgb(208, 253, 208)" class="cell small-8 medium-12 large-10">
+            <p>Cell Size: Small 8 / Medium 12 / Large 10</p>
+        </div>
+    </div>
+
+    <!-- Example of Grid Container -->
+    <h3 class="text-center" style="margin-top: 12%;">Full Example of Grid Container</h1>
+    <div class="grid-y medium-grid-frame"> <!-- Frame -->
+        <div class="cell shrink header medium-cell-block-container" style="background-color: rgb(193, 250, 193);"> <!-- Header -->
+            <h4 style="text-align: center;">Header for the Grid Frame</h4>
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-4 text-left">
+                    <p>Left Cell: Medium 4</p>
+                </div>
+                <div class="cell medium-4 medium-cell-block">
+                    <p style="width:80vw;">Horizontal Scroll Cell: Medium 4 -> SHOULD ALLOW YOU TO SEE THIS IF YOU SCROLLLLLLLLL. boo!</p>
+                </div>
+                <div class="cell medium-4 text-right">
+                    <p>Right Cell: Medium 4</p>
+                </div>
+            </div>
+        </div>
+        <div class="cell medium-auto medium-cell-block-container"> <!-- Container -->
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-4 medium-cell-block-y text-center" style="margin-top: 10px; margin-bottom: 10px; background-color: rgb(211, 250, 211);">
+                    <h2>Independent Scrolling Sidebar</h2>
+                    <p>A sidebar that allows you to scroll downwards. Usage combined with center text-align.</p>
+                    <p>Foundation is a free responsive front-end framework, providing a responsive grid and HTML and CSS UI components,
+                    templates, and code snippets, including typography, forms, buttons, navigation and other interface elements, as well as
+                    optional functionality provided by JavaScript extensions. Foundation is an open source project, and was formerly
+                    maintained by ZURB. Since 2019, Foundation has been maintained by volunteers.</p>
+
+                    <p>Foundation emerged as a ZURB project to develop front-end code more efficiently. In October 2011, ZURB released
+                    Foundation 2.0 as open source under the MIT License. ZURB released Foundation 3.0 in June 2012, 4.0 in February
+                    2013, 5.0 in November 2013, and 6.0 in November 2015. The team started working on the next version of Foundation for
+                    Sites 7 which most likely will drop support for older browsers and implement newer technologies like flexbox or maybe
+                    calculated grid system. Foundation for Emails, formerly known as ZURB Ink, was released in September 2013. Foundation for Apps was released in December 2014.</p>
+                </div>
+                <div class="cell medium-8 medium-cell-block-y text-center" style="margin-top: 10px; margin-bottom: 10px; background-color: rgb(230, 255, 230);"> <!-- Another Container -->
+                    <h2>Independent Scrolling Body</h2>
+                <p>A body that allows you to scroll downwards. Usage combined with center text-align.</p>
+                <p>Foundation was designed for and tested on numerous browsers and devices. It is a responsive framework built with
+                Sass/SCSS. The framework includes most common patterns needed to prototype a responsive site. Since version 2.0 it also supports responsive design. This means the graphic design of web pages adjusts dynamically,
+                taking into account the characteristics of the device used (PC, tablet, mobile phone). Version 4.0 has taken a
+                mobile-first approach, designing and developing for mobile devices first, and enhancing the web pages and applications
+                for larger screens. Foundation is open source and available on GitHub. Developers are encouraged to participate in the project and make
+                their own contributions to the platform.</p>
+
+                <p>Foundation is modular and consists essentially of a series of Sass stylesheets that implement the various components of
+                the toolkit. Component stylesheets can be included via Sass or by customizing the initial Foundation download.
+                Developers can adapt the Foundation file itself, selecting the components they wish to use in their project.</p>
+
+                <p>Foundation comes standard with a 940 pixel wide, flexible Grid (graphic design) layout. The toolkit is fully responsive
+                to make use of different resolutions and types of devices: mobile phones, portrait and landscape format, tablets and PCs
+                with a low and high resolution (widescreen). This adjusts the width of the columns automatically.</p>
+
+                <p>Foundation provides a set of stylesheets that provide basic style definitions for all key HTML components. These provide
+                a browser and system-wide uniform, modern appearance for formatting text, tables and form elements.</p>
+
+                <p>In addition to the regular HTML elements, Foundation contains other commonly used interface elements. These include
+                buttons with advanced features (for example, grouping of buttons or buttons with drop-down option, make and navigation
+                lists, horizontal and vertical tabs, navigation, breadcrumb navigation, pagination, etc.), labels, advanced typographic
+                capabilities, and formatting for messages such as warnings.</p>
+
+                <p>The JavaScript components of Foundation 4 were moved from jQuery JavaScript library to Zepto, on a presumption that the
+                physically smaller, but API-compatible alternative to JQuery would prove faster for the user. However, Foundation 5
+                moved back to the newer release JQuery-2. "jQuery 2.x has the same API as jQuery 1.x, but does not support Internet
+                Explorer 6, 7, or 8." the official ZURB blog explains,[9] and the unsigned writer claims that the switch back was due to
+                issues of compatibility with customized efforts; and that performance was found to be not as good, on use testing with
+                the newer jQuery-2.</p>
+                </div>
+            </div>
+        </div>
+        <div class="cell shrink footer text-center" style="background-color: rgb(223, 255, 223); margin-bottom: 10px;"> <!-- Footer -->
+            <h3>Foundation's Footer</h3>
+            <p>The text above was from Wikipedia's page!</p>
+        </div>
+    </div>
+
+    <!-- Typography -->
+    <h3 class="text-center">Typography</h3>
+    <p class="lead">This is lead text for emphasis using Foundation's lead class.</p>
+    <p>Basic typography styles for customization:</p>
+    <ul> <!-- Bullet Points -->
+        <li>Unordered list item</li>
+        <li>Another item</li>
+    </ul>
+    <ol> <!-- Numbered List -->
+        <li>Ordered list item</li>
+        <li>Another item</li>
+    </ol>
+
+    <!-- Buttons -->
+    <h3 class="text-center">BUTTONSSS</h3> 
+    <p>Links as Buttons</p>
+        <a href="about.html" class="button">Learn More</a>
+        <a href="#features" class="button">View All Features</a>
+
+        <div> <!-- Buttons With Cool Background Colors -->
+            <a class="button primary" href="#">Primary</a>
+            <a class="button secondary" href="#">Secondary</a>
+            <a class="button success" href="#">Success</a>
+            <a class="button alert" href="#">Alert</a>
+            <a class="button warning" href="#">Warning</a>
+        </div>
+
+        <div> <!-- Buttons With No Background Colors -->
+            <a class="clear button" href="#">Primary</a>
+            <a class="clear button secondary" href="#">Secondary</a>
+            <a class="clear button success" href="#">Success</a>
+            <a class="clear button alert" href="#">Alert</a>
+            <a class="clear button warning" href="#">Warning</a>
+            <a class="clear button" href="#" disabled>Disabled</a>
+        </div>
+    <!-- Buttons With CSS -->
+    <p>HTML Buttons with CSS</p>
+        <div> <!-- Hollow Buttons -->
+            <button class="hollow button" href="#">Primary</button>
+            <button class="hollow button secondary" href="#">Secondary</button>
+            <button class="hollow button success" href="#">Success</button>
+            <button class="hollow button alert" href="#">Alert</button>
+            <button class="hollow button warning" href="#">Warning</button>
+            <button class="hollow button" href="#" disabled>Disabled</button>
+        </div>
+
+        <div> <!-- Disabled Buttons -->
+            <a class="button disabled" href="#" aria-disabled>Disabled</a>
+            <button type="button" class="button primary" disabled>Disabled</button>
+            <button type="button" class="button secondary" disabled>Disabled</button>
+            <button type="button" class="button success" disabled>Disabled</button>
+            <button type="button" class="button alert" disabled>Disabled</button>
+            <button type="button" class="button warning" disabled>Disabled</button>
+        </div>
+
+        <div> <!-- Hollow and Disabled Buttons -->
+            <a class="button hollow disabled" href="#" aria-disabled>Disabled</a>
+            <button type="button" class="button hollow primary" disabled>Disabled</button>
+            <button type="button" class="button hollow secondary" disabled>Disabled</button>
+            <button type="button" class="button hollow success" disabled>Disabled</button>
+            <button type="button" class="button hollow alert" disabled>Disabled</button>
+            <button type="button" class="button hollow warning" disabled>Disabled</button>
+        </div>
+
+    <!-- Callouts -->
+    <h3 class="text-center">Callouts</h3>
+    <div class="callout primary">
+        <h3>Primary Callout</h3>
+        <p>This is a primary callout with some content.</p>
+    </div>
+    <div class="callout secondary"> <!-- Different CSS colors (primary vs secondary) -->
+        <h3>Secondary Callout</h3>
+        <p>This is a secondary callout with different styling.</p>
+    </div>
+    <div class="success callout" data-closable="slide-out-right"> <!-- Closable Callout -->
+        <h3>Closable Callout</h3>
+        <p>CLOSE MEEEE!</p>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Forms -->
+    <h3 class="text-center">Forms</h3>
+    <form>
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="medium-4 cell">
+                    <label>Name
+                        <input placeholder="Your name" type="text" placeholder=".medium-4.cell">
+                    </label>
+                </div>
+                <div class="medium-8 cell">
+                    <label>Email
+                        <input type="email" placeholder="Your email" placeholder=".medium-8.cell">
+                    </label>
+                </div>
+                <div class="medium-1 cell align-middle"> 
+                    <label for="file-upload" class="text-left">Resume:</label>
+                </div>
+                <div class="medium-8 cell align-middle"> <!-- Upload Form -->
+                    <label for="file-upload" class="button">Add Your Resume Here</label>
+                    <input id="file-upload" type="file" class="show-for-sr">
+                </div>
+                <div class="medium-16 cell"> <!-- Dropdown Form -->
+                    <label>Class
+                        <select>
+                            <option value="CS">CS</option>
+                            <option value="Soft Dev">Soft Dev</option>
+                            <option value="APCSA">APCSA</option>
+                            <option value="Topher's Guide to A Million Dollars">Topher's Guide to A Million Dollars</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="medium-16 cell">
+                    <label>Message
+                        <textarea style="height: 200px;" placeholder="Your message"></textarea>
+                    </label>
+                    <button type="submit" class="button">Submit</button>
+                </div>
+                <div class="medium-16 cell"> <!-- Switch Form -->
+                    <label class="text-left">Are You Human?!</label>
+                    <div class="switch">
+                        <input class="switch-input" id="exampleSwitch" type="checkbox" name="exampleSwitch">
+                        <label class="switch-paddle" for="exampleSwitch">
+                            <span class="show-for-sr">Screen Readers!</span> 
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Table -->
+    <h3 class="text-center">Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Row 1, Col 1</td>
+                <td>Row 1, Col 2</td>
+                <td>Row 1, Col 3</td>
+            </tr>
+            <tr>
+                <td>Row 2, Col 1</td>
+                <td>Row 2, Col 2</td>
+                <td>Row 2, Col 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Progress Bars -->
+    <h3>Progress Bars</h3>
+    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-meter" style="width: 50%"></div> <!-- How Full It Is -->
+    </div>
+    <div class="progress success" role="progressbar" tabindex="0" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-meter" style="width: 75%"></div>
+    </div>
+    <div class="progress alert" role="progressbar" tabindex="0" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-meter" style="width: 30%"></div>
+    </div>
+    
+    <!-- Cards -->
+    <h3>Cards</h3>
+    <div class="grid-x grid-margin-x small-up-1 medium-up-3">
+        <div class="cell"> <!-- Can have a Title, Image, and a Description -->
+            <div class="card" style="background-color: rgb(252, 222, 222);">
+                <div class="card-divider">Uno</div>
+                <div class="card-section">
+                    <p>Hello!</p>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="card" style="background-color: rgb(224, 245, 216);">
+                <div class="card-divider">Dos</div>
+                <div class="card-section">
+                    <p>Welcome To My Gameshow!</p>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="card" style="background-color: rgb(225, 232, 254);">
+                <div class="card-divider">Thres</div>
+                <div class="card-section">
+                    <p>Topher's Million Dollar CS Contest Competition.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Menus -->
+    <h3>Menus</h3>
+    <div class="medium-16 cell">
+        <p>Menu's are basically Table of Contents.</p> 
+    </div>
+    <ul class="menu"> <!-- Menu Directory -->
+        <li> 
+            <a href="#">Home</a> 
+        </li>
+        <li>
+            <a href="#">About</a>
+        </li>
+        <li>
+            <a href="#">Services</a>
+        </li>
+        <li>
+            <a href="#">Contact</a>
+        </li>
+    </ul>
+    
+    <h4>Vertical Menu</h4> <!-- Vertical Menu -->
+    <ul class="vertical menu">
+        <li>
+            <a href="#">Dashboard</a>
+        </li>
+        <li>
+            <a href="#">Profile</a>
+        </li>
+        <li>
+            <a href="#">Settings</a>
+        </li>
+    </ul>
+    
+    <!-- Pagination -->
+    <h3>Pagination</h3>
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+        <li class="pagination-previous disabled">Previous</li> <!-- Useful for Chained Pages -->
+        <li>
+            <a href="#" aria-label="Page 1">1</a>
+        </li>
+        <li>
+            <a href="#" aria-label="Page 2">2</a>
+        </li>
+        <li>
+            <a href="#" aria-label="Page 3">3</a>
+        </li>
+        <li>
+            <a href="#" aria-label="Page 4">4</a>
+        </li>
+        <li class="pagination-next">
+            <a href="#" aria-label="Next page">Next</a>
+        </li>
+    </ul>
+    
+    <!-- Breadcrumbs -->
+    <h3>Breadcrumbs</h3>
+    <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs"> <!-- Also Useful for Chained Pages -->
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Category</a>
+            </li>
+            <li>
+                <span class="show-for-sr">Current: </span> Product
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>From from the Foundation Documents!</p>
+    </footer>
+</body>
+
+</html>
