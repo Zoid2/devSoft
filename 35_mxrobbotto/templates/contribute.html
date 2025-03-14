@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Contribute to Story: {{ story.title }}</h1>
-    <p>{{ story.content }}</p>
+    <h1>Contribute to Story: {{ story[1] }}</h1>
+    <p>{{ story[2] }}</p>
     <form method="POST">
         <label for="contribution">Your Contribution:</label>
         <textarea id="contribution" name="contribution" required></textarea>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, g
+from flask import Flask, render_template, request, redirect, url_for, flash, session, g
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -39,12 +39,14 @@ def signup():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        hashed_password = generate_password_hash(password, method='sha256')
+        hashed_password = generate_password_hash(password)
         
-        execute_db('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashed_password])
-        
-        flash('You have successfully signed up!', 'success')
-        return redirect(url_for('login'))
+        try:
+            execute_db('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashed_password])
+            flash('You have successfully signed up!', 'success')
+            return redirect(url_for('login'))
+        except sqlite3.IntegrityError:
+            flash('Username already exists', 'danger')
     return render_template('signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -55,29 +57,55 @@ def login():
         
         user = query_db('SELECT * FROM users WHERE username = ?', [username], one=True)
         if user and check_password_hash(user[2], password):
+            session['user_id'] = user[0]
+            session['username'] = user[1]
             return redirect(url_for('index'))
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html')
 
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    session.pop('username', None)
+    flash('You have been logged out.', 'success')
+    return redirect(url_for('index'))
+
 @app.route('/create_story', methods=['GET', 'POST'])
 def create_story():
+    if 'user_id' not in session:
+        flash('You need to be logged in to create a story.', 'danger')
+        return redirect(url_for('login'))
+
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['content']
-        
+
         execute_db('INSERT INTO stories (title, content) VALUES (?, ?)', [title, content])
-        
+        flash('Story created successfully!', 'success')
         return redirect(url_for('index'))
     return render_template('create_story.html')
 
 @app.route('/contribute/<int:story_id>', methods=['GET', 'POST'])
 def contribute(story_id):
+    if 'user_id' not in session:
+        flash('You need to be logged in to contribute to a story.', 'danger')
+        return redirect(url_for('login'))
+    
+    user_id = session['user_id']
     story = query_db('SELECT * FROM stories WHERE id = ?', [story_id], one=True)
+    contribution_check = query_db('SELECT * FROM contributions WHERE user_id = ? AND story_id = ?', [user_id, story_id], one=True)
+    
+    if contribution_check:
+        flash('You have already contributed to this story.', 'danger')
+        return redirect(url_for('index'))
+
     if request.method == 'POST':
         contribution = request.form['contribution']
         new_content = story[2] + f"\n\n{contribution}"
         execute_db('UPDATE stories SET content = ? WHERE id = ?', [new_content, story_id])
+        execute_db('INSERT INTO contributions (user_id, story_id) VALUES (?, ?)', [user_id, story_id])
+        flash('Contribution added successfully!', 'success')
         return redirect(url_for('index'))
     return render_template('contribute.html', story=story)
 

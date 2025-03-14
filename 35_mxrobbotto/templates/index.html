@@ -11,8 +11,13 @@
     <nav>
         <a href="{{ url_for('index') }}">Home</a>
         <a href="{{ url_for('create_story') }}">Create Story</a>
-        <a href="{{ url_for('signup') }}">Sign Up</a>
-        <a href="{{ url_for('login') }}">Login</a>
+        {% if session.get('user_id') %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <span>Welcome, {{ session.get('username') }}!</span>
+        {% else %}
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        {% endif %}
     </nav>
     <div class="stories">
         {% for story in stories %}
